@@ -1,0 +1,45 @@
+// hr{
+//   width: 50%;
+// }
+h2{
+  font-size: 30px;
+text-shadow: 2px 2px 2px black;
+text-align: center;
+}
+
+h3{
+  font-size: 12px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.search{
+  margin-left: 40%;
+}
+// div{
+//   border: solid black 1px;
+// }
+p{
+  text-align: center;
+}
+
+.track-result{
+  width: 160px;
+  float: left;
+  margin: 60px;
+  border: solid grey 1px;
+  border-radius: 5px;
+height: 272px;
+
+  img{
+    width: 160px;
+    height: 160px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+  }
+.track-info{
+text-align: center;
+min-height: 80px;
+font-size: 12px;
+  }
+}
