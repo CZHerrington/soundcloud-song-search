@@ -57,7 +57,7 @@ console.log("|writeToPage| Search results populated")
 var search = function(value){
 SC.get('/tracks', {
   q: `"${value}"`,
-  limit: '16'
+  limit: '15'
 }).then(function(tracks) {
   trackList = tracks
   console.log("|search| fetched tracks");
@@ -95,5 +95,5 @@ console.log('poke')
 });
 
 // test init
-getTracks('love')
+getTracks('1')
 // test init
