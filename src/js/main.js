@@ -19,7 +19,8 @@ var template = function(tracks) {
   var coverURL = tracks.artwork_url;
   var streamURL = tracks.stream_url;
   if (coverURL == null) {coverURL = "images/noart.png"};
-  return `<div class="track-result">
+  console.log("coverURL", coverURL, "stream: ", streamURL)
+  return `<div class="track-result" data-stream="${streamURL}">
     <img id="track-img" src="${coverURL}"></img>
     <div class="track-info">
     <p><h3>${title}</h3></p>
@@ -29,16 +30,6 @@ var template = function(tracks) {
     </div>`
   };
 
-
-// SHOULD BE TESTED MORE ^^^
-// var trackTemplate = function(objs){
-// debugger;
-//   var title = objs.title;
-//   var artist = objs.user.username;
-//   var coverURL = objs.artwork_url;
-//   var streamURL = objs.stream_url;
-//   return "Blahhhh"
-// }
 
 
 
@@ -90,10 +81,35 @@ console.log('|Button Click Event|  ' + searchTerm)
 // This sets an event listener on the search button and takes the value of the
 // search form when the button is clicked
 
-$('#track-img').click(function(){
-console.log('poke')
-});
 
 // test init
 getTracks('1')
 // test init
+
+function success (data) {
+  console.log( data )
+};
+function error (data) {
+  console.log( data )
+};
+
+var audioTemplate = function (stream) {
+return `<audio autoplay="true" controls="true" src="${stream}/?client_id=${clientID}">Browser doesnt support audio tag</audio>`
+}
+
+
+// $.ajax({
+//   url: 'https://api.soundcloud.com/tracks/104738015/streams',
+//   data: {client_id: clientID },
+//   success: success,
+//   error: error,
+// });
+
+$('#searchcontent').on('click', '.track-result', function(data)
+{
+    var stream = data.currentTarget.dataset.stream
+  $(".audio-player").html(audioTemplate(stream))
+    console.log('got it', data.currentTarget.dataset.stream)
+});
+
+ // https://api.soundcloud.com/tracks/104738015/streams?client_id=67201e5f48e40bf8d3aed22929bbd7e1
