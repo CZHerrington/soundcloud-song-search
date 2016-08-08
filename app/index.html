@@ -9,26 +9,37 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   </head>
   <body>
+    <!-- <div class="container"> -->
+      <section class="hero is-dark is-bold">
+  <div class="hero-body">
     <div class="container">
-      <p><h2>Soundcloud Search</h2></p>
-      <hr>
-      <br>
-      <div class="audio-player">
-
-      </div>
-      <br>
+      <h1 class="title">
+      Soundcloud
+      </h1>
+      <h2 class="subtitle">
+        soundcloud API implementation
+      </h2>
+    </div>
+  </div>
+</section>
+<div class="search-container">
 <div class="search">
-<input type="text" id="searchform" placeholder="search by artist">
+<form>
+<input type="text" id="searchform" placeholder="search by artist or song">
+</input>
 <input type="button" id="searchbutton" value="Search">
 </input>
-</input>
+</form>
 </div>
-<hr>
-</hr>
+</div>
+<br>
+    <div class="audio-player">
+    </div>
+      <br>
       <div class="search-results" id="searchcontent">
       </div>
 
-    </div>
+    <!-- </div> -->
     <script src="js/bundle.js"></script>
   </body>
 </html>
